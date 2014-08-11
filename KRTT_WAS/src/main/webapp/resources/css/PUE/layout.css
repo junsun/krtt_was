@@ -1,0 +1,154 @@
+@charset "utf-8";
+
+/* Bluewave Web Standard Team SJS 120830 */
+
+/* common */
+
+.loading_screen {
+	background-color: #333;
+	opacity: 0.7;
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top:0px;
+	z-index: 1;
+}
+
+
+/* UI Object */
+.ly_loading{width:200px; z-index: 10001; margin: 20% auto;}
+.ly_loading p,.ly_loading img{margin:0;padding:0;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;font-size:12px;line-height:normal}
+.ly_loading img{border:none}
+.ly_loading .dsc_loading{position:relative;width:100%;padding-bottom:7px;font-weight:normal;letter-spacing:-1px;color: #eee;}
+
+
+.content_upper,
+.content_upper_summary {
+	display:inline-block;
+	width: 95%;
+	padding:20px 25px;
+	background-color:#f4f5f5;
+	font-family:'나눔고딕',NanumGothic;
+	color:#444
+}
+
+.content_upper_summary table.pue_area {
+	display: inline-block;
+	margin: 10px 0 0 70px;
+	width: 30%;
+	height: 200px;
+	float: left;
+	font-size: 35px;
+}
+
+
+.content_upper table.pue_area {
+	display: inline-block;
+	margin: 40px 0 0 40px;
+	width: 30%;
+	height: 300px;
+	float: left;
+	font-size: 40px;
+}
+
+.content_upper table th,
+.content_upper_summary table th {
+	text-align: left;
+	font-family:'나눔고딕',NanumGothic;
+	height: 65px;
+}
+
+.content_upper table td,
+.content_upper_summary table td {
+	text-align: right;
+	font-family:'나눔고딕',NanumGothic;
+	font-weight: normal;
+	height: 65px;
+}
+
+
+.content_upper table .daily_avg,
+.content_upper_summary table .pue_avg {
+	font-size: 24px;	
+}
+
+.content_upper table .pue {
+	
+}
+
+.content_upper table .dcie {
+	
+}
+
+.content_upper table .tmptr_hmdt {
+	text-align: center;
+	font-size: 24px;
+}
+
+.content_upper .graph {
+	display: inline-block;
+	width: 40%;
+	height: 320px;
+	margin: 10px 0 0 10px;
+}
+
+.content_upper_summary .summary-graph {
+	display: inline-block;
+	width: 60%;
+	height: 180px;
+	margin: 10px 0 0 10px;
+}
+
+
+.title-margin { 
+	margin: 30px 0 5px 0;
+}
+
+.title-margin-bottom { 
+	margin-bottom: 5px;
+}
+
+.content-bottom {
+	width: 100%;
+	display: inline-block;
+}
+
+.content-bottom-sub-1 {
+	width: 24%;
+	display: inline-block;
+}
+
+.content-bottom-sub-2 {
+	width: 24%;
+	display: inline-block;
+	margin-left: 5%;
+}
+
+.content-bottom-sub-3 {
+	width: 40%;
+	display: inline-block;
+	margin-left: 5%;
+}
+
+.content-bottom-summary {
+	width: 100%;
+	display: inline-block;
+	margin-top: 30px;
+}
+
+.building_kwh {
+	height: 220px;
+	width: 220px;
+}
+
+.usetype_kwh {
+	height: 250px;
+	width: 400px;
+}
+
+.svr_kwh {
+	height: 250px;
+	width: 380px;
+}
+
+

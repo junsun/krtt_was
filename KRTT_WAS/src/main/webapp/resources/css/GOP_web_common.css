@@ -1,0 +1,82 @@
+@charset "utf-8";
+
+.padrl1{padding:0px 1px !important;}
+.disabledTd{background-color:#dcdcdc !important; }
+.samelevelApprover {background-color:#e5f1f9 !important;}
+.invalid_fieldvalue {background-color:#f1dadd !important;} 
+.readonly_field {border:1px solid #d9d9d9 !important;background-color:#f7f7f7} 
+.disabled_field {background-color:#dcdcdc !important;}
+
+.floating_layer { position:absolute; z-index:100000 ;width:100%;}
+ .ui-widget {font-size:1em}
+ .ui-datepicker select.ui-datepicker-month, .ui-datepicker select.ui-datepicker-year{width:55px;font-size:0.9em}
+ * html .ui-autocomplete {
+		height: 200px;
+	}
+	
+	fieldset { padding:0; border:0;}
+		div#users-contain { width: 350px; margin: 20px 0; }
+		div#users-contain table { margin: 1em 0; border-collapse: collapse; width: 100%; }
+		div#users-contain table td, div#users-contain table th { border: 1px solid #eee; padding: .6em 10px; text-align: left; }
+		.ui-dialog .ui-state-error { padding: .3em; }
+		.validateTips { border: 1px solid transparent; padding: 0.3em; }
+	
+		.default.active {color: #999; ; font-size:11px}
+.ui-autocomplete li{border-bottom:1px solid #ececec}
+.ui-autocomplete li.last{border-bottom:none}
+.ui-autocomplete li a{display:inline-block;padding:8px 11px}
+.ui-autocomplete li a:hover{background-color:#fafafa}
+.ui-autocomplete li a strong,
+.ui-autocomplete li a{color:#444}
+.ui-autocomplete li a strong span{color:#4294b6}
+.ui-autocomplete li a em{padding:0 10px 0 13px;color:#898989}
+
+.ui-autocomplete {
+		max-height: 200px;
+		overflow-y: auto;
+		overflow-x: hidden;
+		padding-right: 5px;
+		border:1px solid #c7c7c7;background-color:#fff;
+		z-index:100 !important;
+	}
+	
+	.input_auto {height:20px; border:1px solid #999999; border-bottom:1px solid #DBDBDB; border-right:1px solid #DBDBDB; padding:3px 0 0 5px;background-image:url('../../images/btn_atcmp_down_on.gif');background-repeat:no-repeat; 	background-position:right center;}
+
+.request_noimg{padding:8px 0 9px 34px;border-bottom:1px solid #ededed;background:url() #f8f8f8 -45px -77px no-repeat;line-height:18px;color:#444}
+.normal_width{width:97.8%}
+.s_box2 .inner{position:absolute;top:20px;left:0;z-index:150;width:100%}
+.s_box2 ul{border:1px solid #d9d9d9;border-top:0;background-color:#fff;color:#444}
+.s_box2 li{line-height:13px}
+.s_box2 li label{margin-right:0}
+.s_box2 li input[type=checkbox]{width:13px;height:13px;margin-right:3px;vertical-align:top}
+
+.bbs_drag_type1 em{display:block;margin:3px 3px 8px;padding:4px 0 3px 5px;border:1px solid #f3da80;background-color:#fee897;line-height:15px;font-size:11px;letter-spacing:-1px}
+
+.gon {background-color:#DCDCDC}
+.ron {background-color:#F1DADA}
+.yon {background-color:#fbfae1}
+.snb_area h3.h_type2{float:none;padding:0px 0 4px !important;border-top:0px solid #dcdcdc !important}
+.snb_area h3.h_type2 a{color:#444}
+
+.disposer_v2 .aside2{top:100px}
+.tbl_style7 tr:first-child td,.tbl_style7 tr:first-child td a{color:#444 !important}
+.expandedTd{color:#4294b6 !important}
+.expandedTd a{color:#4294b6 !important}
+
+.process_txt{overflow-y:auto;height:180px;border:1px solid #d9d9d9;padding:5px 7px;font-size:11px !important;line-height:20px;color:#666}
+.tbl_style3 td strong{color:#f66900}
+.lst_skip li span{display:inline-block;float:left;width:100% !important}
+
+/* progress bar container */
+#progress_bar{        border:1px solid black;                height:20px;        position:relative;        color:black; margin-right:5px; margin-left:5px}
+/* color bar */
+#progress_bar div.progress_{        position:absolute;        width:0;        height:100%;        overflow:hidden;        background-color:#369;}
+/* text on bar */
+#progress_bar div.progress_ .text{        position:absolute;        text-align:center;        color:white;font-weight:bold; font-size:14px;;font-family:Verdana ,Arial;padding-top:1px}
+/* text off bar */
+#progress_bar div.text{        position:absolute;        width:100%;        height:100%;        text-align:center; font-weight:bold; font-size:14px ;font-family: Verdana, Arial;padding-top:1px}
+
+.bdt{border-top:1px solid #a1a1a1 !important}
+a.btn_normal{display:inline-block;color:#425280}
+.highlight_text {font-weight:bold; background-color: #FFD7D8 !important}/* font-weight:bold;color: BLUE; */
+

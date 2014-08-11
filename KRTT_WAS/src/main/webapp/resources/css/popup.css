@@ -1,0 +1,11 @@
+@charset "utf-8";
+
+.layer {position:fixed; border:1px solid #8a8c8d; background:#fff}
+.layer .layer_header,
+.layer .layer_header .tit {display:block; background:url(http://static.naver.com/groupware/2010/bg_layer_header.gif) repeat-x}
+.layer .layer_header {height:27px; padding-right:1px; background-position:100% 0}
+.layer .layer_header .tit {height:20px; padding:7px 0 0 8px; font-size:11px; color:#555; letter-spacing:-1px; line-height:13px}
+.layer .layer_content {margin:15px; font-size: 13px;}
+.layer .layer_footer {margin:0 15px; padding:7px 0 12px; border-top:1px solid #d1d1d1; text-align:center}
+.layer_move .layer_header {cursor:move}
+.layer_center {left:50%; top:50%; margin:-90px 0 0 -155px}
