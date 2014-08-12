@@ -31,8 +31,7 @@ public class GmailSender extends javax.mail.Authenticator{
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.port", "465");
 		props.put("mail.smtp.socketFactory.port", "465");
-		props.put("mail.smtp.socketFactory.class",
-				"javax.net.ssl.SSLSocketFactory");
+		props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
 		props.put("mail.smtp.socketFactory.fallback", "false");
 		props.setProperty("mail.smtp.quitwait", "false");
 
@@ -43,20 +42,16 @@ public class GmailSender extends javax.mail.Authenticator{
 		return new PasswordAuthentication(user, password);
 	}
 
-	public synchronized void sendMail(String subject, String body,
-			String sender, String recipients) throws Exception {
+	public synchronized void sendMail(String subject, String body,String sender, String recipients) throws Exception {
 		MimeMessage message = new MimeMessage(session);
-		DataHandler handler = new DataHandler(new ByteArrayDataSource(
-				body.getBytes(), "text/plain"));
+		DataHandler handler = new DataHandler(new ByteArrayDataSource(body.getBytes(), "text/plain"));
 		message.setSender(new InternetAddress(sender));
 		message.setSubject(subject);
 		message.setDataHandler(handler);
 		if (recipients.indexOf(',') > 0)
-			message.setRecipients(Message.RecipientType.TO,
-					InternetAddress.parse(recipients));
+			message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipients));
 		else
-			message.setRecipient(Message.RecipientType.TO, new InternetAddress(
-					recipients));
+			message.setRecipient(Message.RecipientType.TO, new InternetAddress(recipients));
 		Transport.send(message);
 	}
 
