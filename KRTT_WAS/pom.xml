@@ -117,7 +117,13 @@
 			<scope>test</scope>
 		</dependency>
 		
-		
+		<dependency>
+		    <groupId>javax</groupId>
+		    <artifactId>javaee-web-api</artifactId>
+		    <version>6.0</version>
+		    <scope>provided</scope>
+		</dependency>
+
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
@@ -135,7 +141,6 @@
 			<artifactId>tiles-extras</artifactId>
 			<version>2.2.2</version>
 		</dependency>
-		
 		
 		
 		<!-- dbcp jdbc connection pool -->
