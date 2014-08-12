@@ -56,7 +56,7 @@ public class HomeController {
 		resultMap.put("RESULT", "SUCCESS");
 		int authNum = (int)Math.floor((Math.random() * 10000) + 1);
 		
-		GmailSender sender = new GmailSender("passion.people.krtt@gmail.com", "wnstjs86");
+		GmailSender sender = new GmailSender("passion.people.krtt@gmail.com", "naver!@#123");
 		try {
 			sender.sendMail(
 					"[KRTT] 사용자 인증", 
