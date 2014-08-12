@@ -13,7 +13,7 @@
 			write-number="1" write-timeout="0" write-fsync="true" />
 	</mongo:mongo>
 	
-	<bean id="mongoTemplate">
+	<bean id="MongoTemplate">
 	    <constructor-arg ref="mongo" />
 	    <constructor-arg name="databaseName" value="krtt" />
 	</bean>
