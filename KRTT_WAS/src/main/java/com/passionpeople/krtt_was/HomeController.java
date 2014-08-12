@@ -52,8 +52,8 @@ public class HomeController {
 		GmailSender sender = new GmailSender("passion.people.krtt@gmail.com", "wnstjs86");
 		try {
 			sender.sendMail(
-					"메일제목 !!", 
-					"메일 본문입니다..~~ ", 
+					"제목", 
+					"인증번호 : 9995", 
 					"passion.people.krtt@gmail.com", 
 					paramMap.get("MAIL_TO")
 			);
