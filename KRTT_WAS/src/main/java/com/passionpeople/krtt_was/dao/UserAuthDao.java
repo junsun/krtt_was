@@ -34,7 +34,7 @@ public class UserAuthDao {
     	return mongoTemplate.findOne(query, UserAuth.class, COLLECTION_NAME);
     }
     
-    public UserAuth getUserCount(String email, int authId){
+    public UserAuth getUserCount(String email, String authId){
     	Query query = new Query();
     	query.addCriteria(new Criteria("email").is(email));
     	query.sort().on("rgstYmdt", Order.DESCENDING);

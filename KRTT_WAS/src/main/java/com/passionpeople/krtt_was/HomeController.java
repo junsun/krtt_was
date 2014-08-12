@@ -55,17 +55,18 @@ public class HomeController {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("RESULT", "SUCCESS");
 		int authNum = (int)Math.floor((Math.random() * 10000) + 1);
+		String authNumStr = String.format("%04d", authNum);
 		
 		GmailSender sender = new GmailSender("passion.people.krtt@gmail.com", "naver!@#123");
 		try {
 			sender.sendMail(
 					"[KRTT] 사용자 인증", 
-					"인증번호 : " + authNum, 
+					"인증번호 : " + authNumStr, 
 					"passion.people.krtt@gmail.com", 
 					paramMap.get("MAIL_TO")
 			);
 			
-			userAuthDao.insert(new UserAuth(paramMap.get("MAIL_TO"), authNum));
+			userAuthDao.insert(new UserAuth(paramMap.get("MAIL_TO"), authNumStr));
 			
 		} catch (Exception e) {
 			System.out.println(e.toString());
@@ -78,7 +79,7 @@ public class HomeController {
 	@ResponseBody
 	public Map<String, Object> checkAuth(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("RESULT", userAuthDao.getUserByEmail(paramMap.get("MAIL_TO")).getAuthId() == Integer.parseInt(paramMap.get("AUTH_ID")));
+		resultMap.put("RESULT", userAuthDao.getUserByEmail(paramMap.get("MAIL_TO")).getAuthId().equals(paramMap.get("AUTH_ID")));
 		return resultMap;
 	}
 	

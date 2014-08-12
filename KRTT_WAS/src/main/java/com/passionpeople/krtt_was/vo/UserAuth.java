@@ -6,10 +6,10 @@ import java.util.Date;
 public class UserAuth implements Serializable {
     private static final long serialVersionUID = -7667147479819193393L;
     private String email;
-    private int authId;
+    private String authId;
     private Date rgstYmdt;
     
-    public UserAuth(String email, int authId){
+    public UserAuth(String email, String authId){
     	this.email = email;
     	this.authId = authId;
     	this.rgstYmdt = new Date();
@@ -21,10 +21,10 @@ public class UserAuth implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public int getAuthId() {
+	public String getAuthId() {
 		return authId;
 	}
-	public void setAuthId(int authId) {
+	public void setAuthId(String authId) {
 		this.authId = authId;
 	}
 	public Date getRgstYmdt() {
