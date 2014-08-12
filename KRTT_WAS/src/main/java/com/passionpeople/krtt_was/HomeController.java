@@ -74,6 +74,14 @@ public class HomeController {
 		return resultMap;
 	}
 	
+	@RequestMapping(value = "/CHECK_AUTH", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> checkAuth(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("RESULT", userAuthDao.getUserByEmail(paramMap.get("MAIL_TO")).getAuthId() == Integer.parseInt(paramMap.get("AUTH_ID")));
+		return resultMap;
+	}
+	
 	
 	@RequestMapping(value = "/AJAX/costs_elec_yearly_list", method = RequestMethod.GET)
 	@ResponseBody
