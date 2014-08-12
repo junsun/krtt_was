@@ -31,13 +31,13 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/serotonin-JSON-1.0.2.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/seroUtils.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/sqljdbc4.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/activation.jar"/>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/additionnal.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v6.0">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mail.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/krtt_was/KRTT_WAS/src/main/webapp/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/krtt_was/KRTT_WAS/src/main/webapp/WEB-INF/lib/additionnal.jar"/>
+	<classpathentry kind="lib" path="D:/workspace/krtt_was/KRTT_WAS/src/main/webapp/WEB-INF/lib/mail.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
