@@ -31,5 +31,8 @@
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/serotonin-JSON-1.0.2.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/seroUtils.jar"/>
 	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/activation.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/additionnal.jar"/>
+	<classpathentry kind="lib" path="src/main/webapp/WEB-INF/lib/mail.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
