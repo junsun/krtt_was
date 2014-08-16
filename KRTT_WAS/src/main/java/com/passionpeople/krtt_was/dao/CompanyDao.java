@@ -28,7 +28,7 @@ public class CompanyDao  {
     public List<Company> getCompanyList() {
     	Query query = new Query();
     	query.addCriteria(new Criteria());
-    	query.sort().on("cpNm", Order.ASCENDING);
+    	query.sort().on("cpId", Order.ASCENDING);
         return mongoTemplate.find(query, Company.class, COLLECTION_NAME);
     }
     

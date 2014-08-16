@@ -6,12 +6,12 @@ public class Company implements Serializable {
     private static final long serialVersionUID = -7667147479819193393L;
     private String cpNm;
     private String url;
-    private String imgUrl;
+    private String cpId;
     
-    public Company(String cpNm, String url, String imgUrl){
+    public Company(String cpNm, String url, String cpId){
     	this.cpNm = cpNm;
     	this.url = url;
-    	this.imgUrl = imgUrl;
+    	this.cpId = cpId;
     }
 
 	public String getCpNm() {
@@ -30,12 +30,12 @@ public class Company implements Serializable {
 		this.url = url;
 	}
 
-	public String getImgUrl() {
-		return imgUrl;
+	public String getCpId() {
+		return cpId;
 	}
 
-	public void setImgUrl(String imgUrl) {
-		this.imgUrl = imgUrl;
+	public void setCpId(String cpId) {
+		this.cpId = cpId;
 	}
     
     
