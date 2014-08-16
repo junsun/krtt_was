@@ -8,6 +8,7 @@ import org.apache.commons.io.IOUtils;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -32,6 +33,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.passionpeople.krtt_was.dao.CompanyDao;
 import com.passionpeople.krtt_was.dao.UserAuthDao;
 import com.passionpeople.krtt_was.utils.GmailSender;
+import com.passionpeople.krtt_was.vo.Company;
 import com.passionpeople.krtt_was.vo.UserAuth;
 
 /**
@@ -99,10 +101,9 @@ public class HomeController {
 	
 	@RequestMapping(value = "/CAMPANY_LIST", method = RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> companyList(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+	public List<Company> companyList(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("RESULT", companyDao.getCompanyList());
-		return resultMap;
+		return companyDao.getCompanyList();
 	}
 	
 	
