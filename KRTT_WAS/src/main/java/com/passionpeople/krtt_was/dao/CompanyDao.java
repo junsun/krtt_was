@@ -32,5 +32,4 @@ public class CompanyDao  {
         return mongoTemplate.find(query, Company.class, COLLECTION_NAME);
     }
     
-    
 }
