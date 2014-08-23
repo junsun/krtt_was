@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Corlate</title>
+    <title>BeeCheong</title>
 	
 	<!-- core CSS -->
     <link href="/resources/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -18,7 +18,7 @@
     <script src="/resources/bootstrap/js/html5shiv.js"></script>
     <script src="/resources/bootstrap/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="/resources/bootstrap/images/ico/favicon.ico">
+    <link rel="shortcut icon" href="/resources/bootstrap/images/logo.png">
     <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/bootstrap/images/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/bootstrap/images/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/bootstrap/images/ico/apple-touch-icon-72-precomposed.png">
