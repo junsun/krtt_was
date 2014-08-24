@@ -43,6 +43,7 @@
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">회사소개</a></li>
+                        <li><a href="aboutus">About-Us</a></li>
                         <li><a href="portfolio">사업영역</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">취급영역<i class="fa fa-angle-down"></i></a>

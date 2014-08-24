@@ -5,57 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>About Us | Corlate</title>
+    <title>BeeCheong</title>
 	
 	<!-- core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/font-awesome.min.css" rel="stylesheet">
-    <link href="css/prettyPhoto.css" rel="stylesheet">
-    <link href="css/animate.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet">
-	
+    <link href="/resources/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="/resources/bootstrap/font-awesome.min.css" rel="stylesheet">
+    <link href="/resources/bootstrap/animate.min.css" rel="stylesheet">
+    <link href="/resources/bootstrap/prettyPhoto.css" rel="stylesheet">
+    <link href="/resources/bootstrap/main.css" rel="stylesheet">
+    <link href="/resources/bootstrap/responsive.css" rel="stylesheet">
     <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
+    <script src="/resources/bootstrap/js/html5shiv.js"></script>
+    <script src="/resources/bootstrap/js/respond.min.js"></script>
     <![endif]-->       
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="/resources/bootstrap/images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/resources/bootstrap/images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/resources/bootstrap/images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/resources/bootstrap/images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="/resources/bootstrap/images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
-<body>
+<body class="homepage">
 
-    <header id="header">
-        <div class="top-bar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-xs-4">
-                        <div class="top-number"><p><i class="fa fa-phone-square"></i>  +0123 456 70 90</p></div>
-                    </div>
-                    <div class="col-sm-6 col-xs-8">
-                       <div class="social">
-                            <ul class="social-share">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li> 
-                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
-                                <li><a href="#"><i class="fa fa-skype"></i></a></li>
-                            </ul>
-                            <div class="search">
-                                <form role="form">
-                                    <input type="text" class="search-form" autocomplete="off" placeholder="Search">
-                                    <i class="fa fa-search"></i>
-                                </form>
-                           </div>
-                       </div>
-                    </div>
-                </div>
-            </div><!--/.container-->
-        </div><!--/.top-bar-->
-
+     <header id="header">
         <nav class="navbar navbar-inverse" role="banner">
             <div class="container">
                 <div class="navbar-header">
@@ -65,31 +37,31 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="/"><img src="/resources/bootstrap/images/logo.png" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
-                        <li><a href="index.html">Home</a></li>
-                        <li class="active"><a href="about-us.html">About Us</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="/">회사소개</a></li>
+                        <li class="active"><a href="aboutus">About-Us</a></li>
+                        <li><a href="portfolio">사업영역</a></li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Pages <i class="fa fa-angle-down"></i></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">취급영역<i class="fa fa-angle-down"></i></a>
                             <ul class="dropdown-menu">
-                                <li><a href="blog-item.html">Blog Single</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="404.html">404</a></li>
-                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><a href="#">미생물</a></li>
+                                <li><a href="#">칼슘</a></li>
+                                <li><a href="#">기능성 제품</a></li>
+                                <li><a href="#">유황</a></li>
+                                <li><a href="#">벤토나이트</a></li>
+                                <li><a href="#">일라이트</a></li>
                             </ul>
                         </li>
-                        <li><a href="blog.html">Blog</a></li> 
-                        <li><a href="contact-us.html">Contact</a></li>                        
                     </ul>
                 </div>
             </div><!--/.container-->
         </nav><!--/nav-->
-	</header><!--/header-->
+		
+    </header><!--/header-->
 
     <section id="about-us">
         <div class="container">
@@ -110,13 +82,13 @@
 
 					<div class="carousel-inner">
 						<div class="item active">
-							<img src="images/slider_one.jpg" class="img-responsive" alt=""> 
+							<img src="/resources/bootstrap/images/slider_one.jpg" class="img-responsive" alt=""> 
 					   </div>
 					   <div class="item">
-							<img src="images/slider_one.jpg" class="img-responsive" alt=""> 
+							<img src="/resources/bootstrap/images/slider_one.jpg" class="img-responsive" alt=""> 
 					   </div> 
 					   <div class="item">
-							<img src="images/slider_one.jpg" class="img-responsive" alt=""> 
+							<img src="/resources/bootstrap/images/slider_one.jpg" class="img-responsive" alt=""> 
 					   </div> 
 					</div>
 					
@@ -194,7 +166,7 @@
 						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="images/man1.jpg" alt=""></a>
+									<a href="#"><img class="media-object" src="/resources/bootstrap/images/man1.jpg" alt=""></a>
 								</div>
 								<div class="media-body">
 									<h4>Jhon Doe</h4>
@@ -222,7 +194,7 @@
 						<div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="images/man2.jpg" alt=""></a>
+									<a href="#"><img class="media-object" src="/resources/bootstrap/images/man2.jpg" alt=""></a>
 								</div>
 								<div class="media-body">
 									<h4>Jhon Doe</h4>
@@ -267,7 +239,7 @@
 						<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="images/man3.jpg" alt=""></a>
+									<a href="#"><img class="media-object" src="/resources/bootstrap/images/man3.jpg" alt=""></a>
 								</div>
 
 								<div class="media-body">
@@ -293,7 +265,7 @@
 						<div class="single-profile-bottom wow fadeInUp" data-wow-duration="1000ms" data-wow-delay="600ms">
 							<div class="media">
 								<div class="pull-left">
-									<a href="#"><img class="media-object" src="images/man4.jpg" alt=""></a>
+									<a href="#"><img class="media-object" src="/resources/bootstrap/images/man4.jpg" alt=""></a>
 								</div>
 								<div class="media-body">
 									<h4>Jhon Doe</h4>
