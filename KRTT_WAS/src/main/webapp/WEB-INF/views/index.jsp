@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>BeeCheong</title>
+    <title>THE BIO GROUP</title>
 	
 	<!-- core CSS -->
     <link href="/resources/bootstrap/bootstrap.min.css" rel="stylesheet">
@@ -37,25 +37,16 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/"><img src="/resources/bootstrap/images/logo.png" alt="logo"></a>
+                    <a class="navbar-brand" href="/"><img src="/resources/bootstrap/images/logo.png" width="160" alt="logo"></a>
                 </div>
 				
                 <div class="collapse navbar-collapse navbar-right">
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="/">회사소개</a></li>
-                        <li><a href="aboutus">About-Us</a></li>
-                        <li><a href="portfolio">사업영역</a></li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">취급영역<i class="fa fa-angle-down"></i></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">미생물</a></li>
-                                <li><a href="#">칼슘</a></li>
-                                <li><a href="#">기능성 제품</a></li>
-                                <li><a href="#">유황</a></li>
-                                <li><a href="#">벤토나이트</a></li>
-                                <li><a href="#">일라이트</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="/">사업분야</a></li>
+                        <li><a href="/">제품소개</a></li>
+                        <li><a href="aboutus">자료실</a></li>
+                        <li><a href="portfolio">고객센터</a></li>
                     </ul>
                 </div>
             </div><!--/.container-->
