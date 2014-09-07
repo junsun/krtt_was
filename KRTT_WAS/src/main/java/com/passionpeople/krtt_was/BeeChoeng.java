@@ -69,33 +69,48 @@ public class BeeChoeng {
 	}
 
 
+	@RequestMapping(value = "/404", method = RequestMethod.GET)
+	public String nopage(Locale locale, Model model) {
+		return "404";
+	}
+
+
 	@RequestMapping(value = "/portfolio", method = RequestMethod.GET)
 	public String portfolio(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
 		return "portfolio";
 	}
 
 
 	@RequestMapping(value = "/aboutus", method = RequestMethod.GET)
 	public String aboutus(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
 		return "about-us";
+	}
+
+
+	@RequestMapping(value = "/ceo_introduction", method = RequestMethod.GET)
+	public String company(Locale locale, Model model) {
+		return "company/ceo_introduction";
+	}
+
+	@RequestMapping(value = "/history", method = RequestMethod.GET)
+	public String history(Locale locale, Model model) {
+		return "company/history";
+	}
+
+
+	@RequestMapping(value = "/vision", method = RequestMethod.GET)
+	public String vision(Locale locale, Model model) {
+		return "company/vision";
+	}
+
+	@RequestMapping(value = "/member", method = RequestMethod.GET)
+	public String member(Locale locale, Model model) {
+		return "company/member";
+	}
+
+	@RequestMapping(value = "/location", method = RequestMethod.GET)
+	public String location(Locale locale, Model model) {
+		return "company/location";
 	}
 	
 }
