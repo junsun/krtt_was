@@ -136,7 +136,14 @@ public class HomeController {
 	@ResponseBody
 	public Map<String, Object> companyLikedAdd(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("RESULT", companyLikeDao.insert(new CompanyLiked(paramMap.get("CP_ID"), paramMap.get("EMAIL"))));
+		ArrayList<String> resultList = new ArrayList<String>();
+		companyLikeDao.insert(new CompanyLiked(paramMap.get("CP_ID"), paramMap.get("EMAIL")));
+		
+		for(CompanyLiked iterator : companyLikeDao.getCompanyList(paramMap.get("EMAIL"))){
+			resultList.add(iterator.getCpId());
+		}
+		
+		resultMap.put("RESULT", resultList);
 		return resultMap;
 	}
 	
@@ -144,8 +151,14 @@ public class HomeController {
 	@ResponseBody
 	public Map<String, Object> companyLikedRemove(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		ArrayList<String> resultList = new ArrayList<String>();
 		companyLikeDao.remove(paramMap.get("CP_ID"), paramMap.get("EMAIL"));
-		resultMap.put("RESULT", "REMOVED");
+		
+		for(CompanyLiked iterator : companyLikeDao.getCompanyList(paramMap.get("EMAIL"))){
+			resultList.add(iterator.getCpId());
+		}
+		
+		resultMap.put("RESULT", resultList);
 		return resultMap;
 	}
 	
