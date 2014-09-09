@@ -31,9 +31,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.passionpeople.krtt_was.dao.CompanyDao;
+import com.passionpeople.krtt_was.dao.CompanyLikeDao;
 import com.passionpeople.krtt_was.dao.UserAuthDao;
 import com.passionpeople.krtt_was.utils.GmailSender;
 import com.passionpeople.krtt_was.vo.Company;
+import com.passionpeople.krtt_was.vo.CompanyLiked;
 import com.passionpeople.krtt_was.vo.UserAuth;
 
 /**
@@ -46,9 +48,12 @@ public class HomeController {
 
 	@Autowired
 	private UserAuthDao userAuthDao;
-	
+
 	@Autowired
 	private CompanyDao companyDao;
+	
+	@Autowired
+	private CompanyLikeDao companyLikeDao;
 	
 	@Value("#{'resources/image/'}")
 	private Resource resource;
@@ -115,6 +120,31 @@ public class HomeController {
 		return resultMap;
 	}
 	
+	
+	@RequestMapping(value = "/COMPANY_LIKED_LIST", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> companyLikedList(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("RESULT", companyLikeDao.getCompanyList(paramMap.get("EMAIL")));
+		return resultMap;
+	}
+	
+	@RequestMapping(value = "/COMPANY_LIKED_ADD", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> companyLikedAdd(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		resultMap.put("RESULT", companyLikeDao.insert(new CompanyLiked(paramMap.get("CP_ID"), paramMap.get("EMAIL"))));
+		return resultMap;
+	}
+	
+	@RequestMapping(value = "/COMPANY_LIKED_RMV", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> companyLikedRemove(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		companyLikeDao.remove(paramMap.get("CP_ID"), paramMap.get("EMAIL"));
+		resultMap.put("RESULT", "REMOVED");
+		return resultMap;
+	}
 	
 	
 	@RequestMapping(value = "/IMG_DOWN", method = RequestMethod.GET)
