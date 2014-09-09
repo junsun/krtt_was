@@ -120,45 +120,48 @@ public class HomeController {
 	
 	@RequestMapping(value = "/COMPANY_LIKED_LIST", method = RequestMethod.GET)
 	@ResponseBody
-	public List<String> companyLikedList(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
-		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		ArrayList<String> resultList = new ArrayList<String>();
+	public List<HashMap<String, Object>> companyLikedList(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		HashMap<String, Object> resultMap;
+		ArrayList<HashMap<String, Object>> resultList = new ArrayList<HashMap<String, Object>>();
 		
 		for(CompanyLiked iterator : companyLikeDao.getCompanyList(paramMap.get("EMAIL"))){
-			resultList.add(iterator.getCpId());
+			resultMap = new HashMap<String, Object>();
+			resultMap.put("CP_ID", iterator.getCpId());
+			resultList.add(resultMap);
 		}
 		
-		resultMap.put("RESULT", resultList);
 		return resultList;
 	}
 	
 	@RequestMapping(value = "/COMPANY_LIKED_ADD", method = RequestMethod.GET)
 	@ResponseBody
-	public List<String> companyLikedAdd(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
-		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		ArrayList<String> resultList = new ArrayList<String>();
+	public List<HashMap<String, Object>> companyLikedAdd(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		HashMap<String, Object> resultMap;
+		ArrayList<HashMap<String, Object>> resultList = new ArrayList<HashMap<String, Object>>();
 		companyLikeDao.insert(new CompanyLiked(paramMap.get("CP_ID"), paramMap.get("EMAIL")));
 		
 		for(CompanyLiked iterator : companyLikeDao.getCompanyList(paramMap.get("EMAIL"))){
-			resultList.add(iterator.getCpId());
+			resultMap = new HashMap<String, Object>();
+			resultMap.put("CP_ID", iterator.getCpId());
+			resultList.add(resultMap);
 		}
 		
-		resultMap.put("RESULT", resultList);
 		return resultList;
 	}
 	
 	@RequestMapping(value = "/COMPANY_LIKED_RMV", method = RequestMethod.GET)
 	@ResponseBody
-	public List<String> companyLikedRemove(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+	public List<HashMap<String, Object>> companyLikedRemove(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		ArrayList<String> resultList = new ArrayList<String>();
+		ArrayList<HashMap<String, Object>> resultList = new ArrayList<HashMap<String, Object>>();
 		companyLikeDao.remove(paramMap.get("CP_ID"), paramMap.get("EMAIL"));
 		
 		for(CompanyLiked iterator : companyLikeDao.getCompanyList(paramMap.get("EMAIL"))){
-			resultList.add(iterator.getCpId());
+			resultMap = new HashMap<String, Object>();
+			resultMap.put("CP_ID", iterator.getCpId());
+			resultList.add(resultMap);
 		}
 		
-		resultMap.put("RESULT", resultList);
 		return resultList;
 	}
 	
