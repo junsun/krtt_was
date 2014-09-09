@@ -2,18 +2,15 @@ package com.passionpeople.krtt_was;
 
 import java.io.IOException;
 import java.io.InputStream;
-
-import org.apache.commons.io.IOUtils;
-
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
-
+import org.apache.commons.io.IOUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -125,7 +122,13 @@ public class HomeController {
 	@ResponseBody
 	public Map<String, Object> companyLikedList(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		resultMap.put("RESULT", companyLikeDao.getCompanyList(paramMap.get("EMAIL")));
+		ArrayList<String> resultList = new ArrayList<String>();
+		
+		for(CompanyLiked iterator : companyLikeDao.getCompanyList(paramMap.get("EMAIL"))){
+			resultList.add(iterator.getCpId());
+		}
+		
+		resultMap.put("RESULT", resultList);
 		return resultMap;
 	}
 	
