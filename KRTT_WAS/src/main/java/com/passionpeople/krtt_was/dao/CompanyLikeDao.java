@@ -32,11 +32,11 @@ public class CompanyLikeDao {
         mongoTemplate.remove(query, COLLECTION_NAME);
     }
  
-    public List<Company> getCompanyList(String email) {
+    public List<CompanyLiked> getCompanyList(String email) {
     	Query query = new Query();
     	query.addCriteria(new Criteria("userEmail").is(email));
     	query.sort().on("cpNm", Order.ASCENDING);
-        return mongoTemplate.find(query, Company.class, COLLECTION_NAME);
+        return mongoTemplate.find(query, CompanyLiked.class, COLLECTION_NAME);
     }
     
 }
