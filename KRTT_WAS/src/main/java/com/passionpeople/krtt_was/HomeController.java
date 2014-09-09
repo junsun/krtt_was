@@ -134,7 +134,7 @@ public class HomeController {
 	
 	@RequestMapping(value = "/COMPANY_LIKED_ADD", method = RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> companyLikedAdd(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+	public List<String> companyLikedAdd(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		ArrayList<String> resultList = new ArrayList<String>();
 		companyLikeDao.insert(new CompanyLiked(paramMap.get("CP_ID"), paramMap.get("EMAIL")));
@@ -144,12 +144,12 @@ public class HomeController {
 		}
 		
 		resultMap.put("RESULT", resultList);
-		return resultMap;
+		return resultList;
 	}
 	
 	@RequestMapping(value = "/COMPANY_LIKED_RMV", method = RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> companyLikedRemove(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+	public List<String> companyLikedRemove(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		ArrayList<String> resultList = new ArrayList<String>();
 		companyLikeDao.remove(paramMap.get("CP_ID"), paramMap.get("EMAIL"));
@@ -159,7 +159,7 @@ public class HomeController {
 		}
 		
 		resultMap.put("RESULT", resultList);
-		return resultMap;
+		return resultList;
 	}
 	
 	
