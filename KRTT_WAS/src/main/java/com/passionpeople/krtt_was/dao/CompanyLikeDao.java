@@ -34,7 +34,7 @@ public class CompanyLikeDao {
  
     public List<Company> getCompanyList(String email) {
     	Query query = new Query();
-    	query.addCriteria(new Criteria("email").is(email));
+    	query.addCriteria(new Criteria("userEmail").is(email));
     	query.sort().on("cpNm", Order.ASCENDING);
         return mongoTemplate.find(query, Company.class, COLLECTION_NAME);
     }
