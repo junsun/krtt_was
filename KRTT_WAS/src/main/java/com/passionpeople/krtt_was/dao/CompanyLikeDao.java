@@ -28,7 +28,7 @@ public class CompanyLikeDao {
     
     public void remove(String cpId, String email) {
     	Query query = new Query();
-    	query.addCriteria(new Criteria("email").is(email).and("cpId").is(cpId));
+    	query.addCriteria(new Criteria("userEmail").is(email).and("cpId").is(cpId));
         mongoTemplate.remove(query, COLLECTION_NAME);
     }
  
