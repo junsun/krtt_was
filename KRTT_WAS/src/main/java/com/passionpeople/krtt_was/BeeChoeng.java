@@ -43,15 +43,6 @@ import com.passionpeople.krtt_was.vo.UserAuth;
 public class BeeChoeng {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
-	@Autowired
-	private UserAuthDao userAuthDao;
-	
-	@Autowired
-	private CompanyDao companyDao;
-	
-	@Value("#{'resources/image/'}")
-	private Resource resource;
 	
 	
 	@RequestMapping(value = "/", method = RequestMethod.GET)
