@@ -29,10 +29,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.passionpeople.krtt_was.dao.CompanyDao;
 import com.passionpeople.krtt_was.dao.CompanyLikeDao;
+import com.passionpeople.krtt_was.dao.KrttAuthDao;
 import com.passionpeople.krtt_was.dao.UserAuthDao;
 import com.passionpeople.krtt_was.utils.GmailSender;
 import com.passionpeople.krtt_was.vo.Company;
 import com.passionpeople.krtt_was.vo.CompanyLiked;
+import com.passionpeople.krtt_was.vo.KrttAuth;
 import com.passionpeople.krtt_was.vo.UserAuth;
 
 /**
@@ -42,9 +44,13 @@ import com.passionpeople.krtt_was.vo.UserAuth;
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-
+	private static final String KRTT_AUTH_STR = "COOLGAYS";
+	
 	@Autowired
 	private UserAuthDao userAuthDao;
+	
+	@Autowired
+	private KrttAuthDao krttAuthDao;
 
 	@Autowired
 	private CompanyDao companyDao;
@@ -111,12 +117,34 @@ public class HomeController {
 	
 	@RequestMapping(value = "/CHECK_AUTH", method = RequestMethod.GET)
 	@ResponseBody
-	public Map<String, Object> checkAuth(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+	public Map<String, Object> checkUserAuth(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
 		resultMap.put("RESULT", userAuthDao.getUserByEmail(paramMap.get("MAIL_TO")).getAuthId().equals(paramMap.get("AUTH_ID")));
 		return resultMap;
 	}
+
 	
+	@RequestMapping(value = "/CHECK_KRTT_AUTH", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> checkKrttAuth(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		boolean result;
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		if(krttAuthDao.getUserByEmail(paramMap.get("EMAIL")) != null){
+			result = true;
+		} else if((!paramMap.get("AUTH_ID").equals("")) &&
+				  paramMap.get("AUTH_ID").toUpperCase().equals(KRTT_AUTH_STR)){
+			
+			krttAuthDao.insert(new KrttAuth(paramMap.get("EMAIL")));
+			result = true;
+		} else {
+			result = false;
+		}
+		
+		resultMap.put("RESULT", result);
+		return resultMap;
+	}
+
 	
 	@RequestMapping(value = "/COMPANY_LIKED_LIST", method = RequestMethod.GET)
 	@ResponseBody
