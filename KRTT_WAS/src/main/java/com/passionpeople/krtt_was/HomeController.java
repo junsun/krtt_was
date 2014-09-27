@@ -6,6 +6,7 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -160,6 +161,27 @@ public class HomeController {
 		
 		return resultList;
 	}
+	
+	
+	@RequestMapping(value = "/COMPANY_LIKED_COUNT", method = RequestMethod.GET)
+	@ResponseBody
+	public Map<String, Object> companyLikedCount(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		HashMap<String, Object> returnMap = new HashMap<String, Object>();
+		HashMap<String, Integer> resultMap = new HashMap<String, Integer>();
+		ArrayList<HashMap<String, Object>> resultList = new ArrayList<HashMap<String, Object>>();
+		
+		for(CompanyLiked iterator : companyLikeDao.getAllCompanyLikedList()){
+			if(resultMap.containsKey(iterator.getCpId())){
+				resultMap.put("CP_ID", resultMap.get(iterator.getCpId())+1);
+			} else {
+				resultMap.put("CP_ID", 1);	
+			}
+		}
+
+		returnMap.put("RESULT", resultMap);
+		return returnMap;
+	}
+	
 	
 	@RequestMapping(value = "/COMPANY_LIKED_ADD", method = RequestMethod.GET)
 	@ResponseBody

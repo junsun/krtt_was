@@ -39,4 +39,10 @@ public class CompanyLikeDao {
         return mongoTemplate.find(query, CompanyLiked.class, COLLECTION_NAME);
     }
     
+    public List<CompanyLiked> getAllCompanyLikedList() {
+    	Query query = new Query();
+        return mongoTemplate.find(query, CompanyLiked.class, COLLECTION_NAME);
+    }
+    
+    
 }
