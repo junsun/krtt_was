@@ -172,9 +172,9 @@ public class HomeController {
 		
 		for(CompanyLiked iterator : companyLikeDao.getAllCompanyLikedList()){
 			if(resultMap.containsKey(iterator.getCpId())){
-				resultMap.put("CP_ID", resultMap.get(iterator.getCpId())+1);
+				resultMap.put(iterator.getCpId(), resultMap.get(iterator.getCpId())+1);
 			} else {
-				resultMap.put("CP_ID", 1);	
+				resultMap.put(iterator.getCpId(), 1);	
 			}
 		}
 
