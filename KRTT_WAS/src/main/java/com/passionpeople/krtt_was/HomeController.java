@@ -110,9 +110,29 @@ public class HomeController {
 	
 	@RequestMapping(value = "/CAMPANY_LIST", method = RequestMethod.GET)
 	@ResponseBody
-	public List<Company> companyList(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
-		HashMap<String, Object> resultMap = new HashMap<String, Object>();
-		return companyDao.getCompanyList();
+	public ArrayList<HashMap<String, String>> companyList(Locale locale, Model model, @RequestParam Map<String, String> paramMap) {
+		HashMap<String, Integer> resultMap = new HashMap<String, Integer>();
+		ArrayList<HashMap<String, String>> resultList = new ArrayList<HashMap<String, String>>();
+		
+		for(CompanyLiked iterator : companyLikeDao.getAllCompanyLikedList()){
+			if(resultMap.containsKey(iterator.getCpId())){
+				resultMap.put(iterator.getCpId(), resultMap.get(iterator.getCpId())+1);
+			} else {
+				resultMap.put(iterator.getCpId(), 1);	
+			}
+		}
+		
+		HashMap<String, String> tempHash;
+		for(Company iterator : companyDao.getCompanyList()){
+			tempHash = new HashMap<String, String>();
+			tempHash.put("cpId", iterator.getCpId());
+			tempHash.put("cpNm", iterator.getCpNm());
+			tempHash.put("url", iterator.getUrl());
+			tempHash.put("likeCount", resultMap.containsKey(iterator.getCpId()) == true ? Integer.toString(resultMap.get(iterator.getCpId())) : "0");
+			resultList.add(tempHash);
+		}
+		
+		return resultList;
 	}
 	
 	
